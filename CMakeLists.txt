@@ -35,7 +35,7 @@ cmake_policy(VERSION 3.21)
 # Includes a bunch of basic flags and utilities shared across projects
 # See more at the github repository link below
 include(FetchContent)
-if(NOT TARGET ztd.cmake)
+if(NOT DEFINED ZTD_CMAKE_PROJECT_PRELUDE)
 FetchContent_Declare(ztd.cmake
 	GIT_REPOSITORY https://github.com/soasis/cmake.git
 	GIT_TAG main)
