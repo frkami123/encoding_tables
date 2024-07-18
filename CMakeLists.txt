@@ -35,10 +35,12 @@ cmake_policy(VERSION 3.21)
 # Includes a bunch of basic flags and utilities shared across projects
 # See more at the github repository link below
 include(FetchContent)
+if(NOT TARGET ztd.cmake)
 FetchContent_Declare(ztd.cmake
 	GIT_REPOSITORY https://github.com/soasis/cmake.git
 	GIT_TAG main)
 FetchContent_MakeAvailable(ztd.cmake)
+endif()
 set(CMAKE_PROJECT_INCLUDE ${ZTD_CMAKE_PROJECT_PRELUDE})
 
 # # Project declaration
@@ -127,10 +129,12 @@ if(ZTD_ENCODING_TABLES_IS_TOP_LEVEL_PROJECT)
 endif()
 
 # # Main Dependency
+if(NOT TARGET ztd.idk)
 FetchContent_Declare(ztd.idk
 	GIT_REPOSITORY https://github.com/soasis/idk.git
 	GIT_TAG main)
 FetchContent_MakeAvailable(ztd.idk)
+endif()
 
 # # Main library declarations
 # ztd.encoding_tables
